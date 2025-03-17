@@ -792,3 +792,57 @@ const InfoBoard = () => {
 };
 
 InfoBoard();
+
+//New Operation to Make Sets Useful!
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+console.log(italianFoods, mexicanFoods);
+
+//Intersection method
+const commonFood = italianFoods.intersection(mexicanFoods);
+console.log('Intersection:', commonFood);
+
+const commonFoodArr = [...commonFood];
+console.log(commonFoodArr);
+
+const commonFoodNew = new Set(commonFoodArr);
+console.log(commonFoodNew);
+
+//Union method
+const italianAndMexicanFusion = italianFoods.union(mexicanFoods);
+console.log(italianAndMexicanFusion);
+
+const aplhabetFusion = [...italianAndMexicanFusion].sort();
+console.log(aplhabetFusion);
+
+//Difference method
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+console.log(uniqueItalianFoods);
+
+//Symmetric method
+const uniqueItalianFoodsandMexicanFoods = [...italianFoods.symmetricDifference(mexicanFoods)].sort();
+console.log(uniqueItalianFoodsandMexicanFoods);
+
+//DisjointFrom method
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
+
+
+
+
+
